@@ -16,7 +16,7 @@ spring:
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.sky.entity
+  type-aliases-package: com.sky.entity #统一扫描实体类包名，这样在xml文件里不用写全类名！！
   configuration:
     #开启驼峰命名
     map-underscore-to-camel-case: true
