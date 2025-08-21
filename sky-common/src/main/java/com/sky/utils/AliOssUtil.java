@@ -30,7 +30,9 @@ public class AliOssUtil {
 
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
-
+        // 关键在这里：要加上文件夹前缀
+        String folder = "苍穹外卖/";
+        objectName = folder + objectName;
         try {
             // 创建PutObject请求。
             ossClient.putObject(bucketName, objectName, new ByteArrayInputStream(bytes));
