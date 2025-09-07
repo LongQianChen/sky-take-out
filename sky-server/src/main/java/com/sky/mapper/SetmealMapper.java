@@ -40,7 +40,7 @@ public interface SetmealMapper {
     Page<SetmealVO> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
 
     /**
-     * 修改套餐数据
+     * 根据id修改套餐数据
      * @param setmeal
      * @return
      */
