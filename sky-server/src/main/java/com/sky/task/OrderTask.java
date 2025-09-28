@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,6 +21,7 @@ public class OrderTask {
     /**
      * 定时处理处于待支付状态的订单
      */
+    @Transactional
     @Scheduled(cron = "0 * * * * ? ")//每分钟执行一次
     public void processTimeoutOrder(){
         log.info("定时处理超时订单: {}", LocalDateTime.now());
