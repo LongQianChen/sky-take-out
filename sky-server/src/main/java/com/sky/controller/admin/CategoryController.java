@@ -94,7 +94,6 @@ public class CategoryController {
      * @param type
      * @return
      */
-    //TODO 前端有问题没访问list
     @GetMapping("/list")
     @ApiOperation("根据类型查询分类")
     public Result<List<Category>> list(Integer type){
